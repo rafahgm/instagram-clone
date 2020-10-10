@@ -1,28 +1,146 @@
+@font-face {
+  font-family: "Billabong";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Billabong"), url("Billabong.woff") format("woff");
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
 body {
   background-color: #fafafa;
   width: 100%;
   height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a:focus,
+a:active {
+  outline: none;
 }
 
 #container {
-  background-color: red;
   display: flex;
 
-  width: 60vw;
-  height: calc(100vh - 5rem);
+  width: 55vw;
+  height: 100vh;
   margin: auto;
 
   padding-top: 5rem;
 }
 
 #leftPanel {
-  background-color: yellow;
   flex-basis: 50%;
 }
 
 #rightPanel {
-  background-color: green;
   flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#rightPanel #loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 0 auto 10px auto;
+  border: 1px solid #00000020;
+}
+
+#rightPanel #loginForm h1 {
+  font-family: "Billabong";
+  font-size: 3.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.floating-label-wrapper {
+  width: 80%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-input {
+  display: block;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  width: 100%;
+  padding: 0 10px;
+  height: 2.3rem;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.form-input:focus {
+  border: 1px solid #8a8a8a;
+}
+
+.floating-label {
+  color: #8e8e8e;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  transition: all 100ms;
+  pointer-events: none;
+}
+
+.form-input:not(:placeholder-shown) + .floating-label {
+  top: 5px;
+  left: 10px;
+  font-size: 0.6rem;
+}
+
+.form-input:not(:placeholder-shown) {
+  font-size: 0.8rem;
+  padding-top: 15px;
+}
+
+.signin-button {
+  background-color: #0095f635;
+  font-size: 0.8rem;
+  width: 80%;
+  font-weight: 550;
+  color: white;
+  margin: 5px auto 10px auto;
+  padding: 8px 0px;
+  border: none;
+  border-radius: 5px;
+}
+
+.signin-button-enabled {
+  background-color: #0095f6;
+  font-size: 0.8rem;
+  width: 80%;
+  font-weight: 550;
+  color: white;
+  margin: 5px auto 10px auto;
+  padding: 8px 0px;
+  border: none;
+  border-radius: 5px;
+}
+
+.toggle-password-button {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 0.8rem;
+  position: absolute;
+  font-weight: 600;
+  top: 13px;
+  left: 210px;
+}
+
+.toggle-password-button:active {
+  opacity: 0.6;
 }
 
 #phone {
@@ -32,13 +150,150 @@ body {
   display: inline-block;
   background-image: url("./phone.png");
   background-repeat: no-repeat;
+  background-position: 0 -20px;
 }
 
 .phoneContent {
   position: absolute;
-  top: 100px;
+  top: 80px;
   left: 150px;
   width: 247px;
   height: 427px;
   background-repeat: no-repeat;
+}
+
+.text-with-lines {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #8e8e8e;
+  font-size: 0.8rem;
+  font-weight: 550;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.text-with-lines:before,
+.text-with-lines:after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #dbdbdb;
+}
+
+.text-with-lines:before {
+  margin-right: 1.5em;
+}
+
+.text-with-lines:after {
+  margin-left: 1.5em;
+}
+
+.facebook-signin {
+  color: #385185;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 550;
+  margin: 10px auto;
+}
+
+.facebook-signin img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.forgot-password {
+  color: #00376b;
+  text-decoration: none;
+  margin: 10px auto 20px auto;
+  font-size: 0.8rem;
+}
+
+.signup-card {
+  background-color: #fafafa;
+  width: 90%;
+  margin: 0 auto 0 auto;
+  border: 1px solid #00000020;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+}
+
+.signup-card span {
+  font-weight: 100;
+}
+
+.signup-card a {
+  text-decoration: none;
+  color: #42a7f7;
+  font-weight: 500;
+}
+
+.get-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.get-app span {
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.get-app .stores {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.get-app .stores img {
+  outline: none;
+  width: 136px;
+  height: 40px;
+}
+
+.get-app .stores a:focus {
+  outline: none;
+}
+
+.get-app .stores a:active {
+  outline: none;
+  opacity: 0.5;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0 50px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .links {
+  flex-basis: 75%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .links a {
+  color: #00376b;
+  margin: 0px 10px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.footer .links a:active {
+  opacity: 0.6;
+}
+
+.footer .trademark {
+  flex-basis: 25%;
+}
+
+.footer .trademark span {
+  color: #8e8eaa;
+  font-weight: 500;
+  font-size: 0.75rem;
 }
