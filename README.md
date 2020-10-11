@@ -6,8 +6,8 @@ Clone da página inicial do instagram para o curso da Digital Innovation One.
 - CSS 3
 - JavaScript ES6
 
-# Desktop
+## Desktop
 ![Desktop Preview](preview1.png)
 
-# Mobile
+## Mobile
 ![Mobile Preview](preview2.png)
