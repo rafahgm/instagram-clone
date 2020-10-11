@@ -1,9 +1,5 @@
-@font-face {
-  font-family: "Billabong";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Billabong"), url("Billabong.woff") format("woff");
-}
+@import "fonts.css";
+@import "rightPanel.css";
 
 * {
   box-sizing: border-box;
@@ -32,8 +28,6 @@ a:active {
 
   padding-top: 5rem;
 }
-
-@import "rightPanel.css";
 
 .left-panel {
   flex-basis: 50%;
