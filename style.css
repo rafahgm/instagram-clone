@@ -26,8 +26,8 @@ a:active {
 #container {
   display: flex;
 
-  width: 55vw;
-  height: 100vh;
+  width: 850px;
+  height: 760px;
   margin: auto;
 
   padding-top: 5rem;
@@ -35,15 +35,18 @@ a:active {
 
 #leftPanel {
   flex-basis: 50%;
+  height: 100%;
 }
 
 #rightPanel {
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 #rightPanel #loginForm {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   width: 85%;
@@ -150,13 +153,13 @@ a:active {
   display: inline-block;
   background-image: url("./phone.png");
   background-repeat: no-repeat;
-  background-position: 0 -20px;
+  background-position: 0 -15px;
 }
 
 .phoneContent {
   position: absolute;
-  top: 80px;
-  left: 150px;
+  top: 85px;
+  left: 150.5px;
   width: 247px;
   height: 427px;
   background-repeat: no-repeat;
@@ -210,8 +213,8 @@ a:active {
 }
 
 .signup-card {
-  background-color: #fafafa;
-  width: 90%;
+  background-color: #fff;
+  width: 85%;
   margin: 0 auto 0 auto;
   border: 1px solid #00000020;
   text-align: center;
@@ -265,23 +268,28 @@ a:active {
 .footer {
   display: flex;
   flex-direction: row;
-  padding: 10px 0 50px 0;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 50px;
 }
 
 .footer .links {
   flex-basis: 75%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  line-height: 2rem;
 }
 
 .footer .links a {
   color: #00376b;
-  margin: 0px 10px;
+  margin: 0px 5px;
   text-decoration: none;
   font-size: 0.75rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .footer .links a:active {
@@ -290,10 +298,62 @@ a:active {
 
 .footer .trademark {
   flex-basis: 25%;
+  text-align: center;
 }
 
 .footer .trademark span {
   color: #8e8eaa;
   font-weight: 500;
   font-size: 0.75rem;
+}
+
+@media screen and (max-width: 850px) {
+  #leftPanel {
+    display: none;
+  }
+
+  #container {
+    width: 100%;
+    height: 700px;
+    padding-top: 1rem;
+  }
+  #rightPanel {
+    flex-basis: 100%;
+  }
+
+  #rightPanel #loginForm {
+    width: 360px;
+    height: auto;
+    margin: 0 auto 0 auto;
+  }
+
+  .signup-card {
+    width: 360px;
+    margin-top: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer .links {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    flex-basis: 100%;
+  }
+
+  .footer .trademark {
+    margin-bottom: 20px;
+  }
 }
